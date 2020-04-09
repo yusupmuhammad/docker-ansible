@@ -18,8 +18,10 @@
       docker_image:
         name: "{{ image }}"
         state: present
+        force: yes
     - name: creator container
       docker_container:
+        recreate: yes
         name: docker_ansible
         state: started
         image: "{{ image }}"
